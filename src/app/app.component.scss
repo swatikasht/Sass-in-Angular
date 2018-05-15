@@ -1,0 +1,59 @@
+@import '../scss/vars';
+
+.container { width: 100%; };
+
+h1{
+	font-size : 40px;
+	font-family : $font-family;
+	background-color : #37efef;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { 
+	border : 3px solid black;
+	@include border-radius(5px); 
+}
+
+sharedBtnStyle {
+	margin: 10px;
+	@extend .box;
+	padding: 10px;
+	color: #333;
+	cursor: pointer;
+}
+
+#err-btn{
+	@extend sharedBtnStyle;
+	border-color: red;
+}
+
+
+#warn-btn{
+	@extend sharedBtnStyle;
+	border-color: orange;
+}
+
+
+#success-btn{
+	@extend sharedBtnStyle;
+	border-color: green;
+}
+
+article{
+	color : green;
+	@extend .box;
+ 	float: left;
+  	width: 600px / 960px * 100%;
+}
+
+aside{
+  	float: right;
+  	@extend .box;
+  	width: 300px / 960px * 100%;
+}
